@@ -13,6 +13,8 @@
   "author": "AliTaee",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^5.2.6",
+    "style-loader": "^3.0.0",
     "webpack": "^5.41.1",
     "webpack-cli": "^4.7.2"
   },
