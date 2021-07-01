@@ -1,19 +1,30 @@
 @font-face {
-    font-family: 'Roboto Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Roboto Regular'), url('./Roboto-Regular.woff') format('woff');
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Roboto Regular"), url("./Roboto-Regular.woff") format("woff");
 }
 
 body {
-    background: #212121;
-    color: #fefefe;
-    font-family: 'Roboto Regular', Arial, Helvetica, sans-serif;
+  background: #212121;
+  color: #fefefe;
+  font-family: "Roboto Regular", Arial, Helvetica, sans-serif;
 }
 
 .header {
-    font-size: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button {
+  background: blue;
+  cursor: pointer;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: #fefefe;
+  font-size: 1em;
+  margin: 6px 0 12px;
 }
