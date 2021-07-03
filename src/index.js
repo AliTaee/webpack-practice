@@ -1,13 +1,14 @@
-import _ from "lodash";
 import "./style.css";
 import printMe from "./print";
 import webpackIcon from "./webpack-icon.png";
 
-function component() {
+async function getComponent() {
   const element = document.createElement("div");
+  // Lodash, now imported by Dynamic Imports
+  const { default: _ } = await import("lodash");
 
-  // Lodash, now imported by this script
   element.innerHTML = _.join(["Hello", "webpack"], " ");
+
   element.classList.add("header");
 
   const btn = document.createElement("button");
@@ -26,4 +27,6 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+getComponent().then((component) => {
+  document.body.appendChild(component);
+});
