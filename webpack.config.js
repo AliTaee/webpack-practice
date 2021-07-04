@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "development",
@@ -23,6 +25,7 @@ module.exports = {
       template: "./src/index.html",
     }),
     new FaviconsWebpackPlugin("./src/webpack-icon.png"),
+    new BundleAnalyzerPlugin(),
   ],
   module: {
     rules: [
