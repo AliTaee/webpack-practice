@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
 import printMe from "./print";
 import webpackIcon from "./webpack-icon.png";
 
