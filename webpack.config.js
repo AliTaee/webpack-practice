@@ -11,7 +11,7 @@ module.exports = {
     another: "./src/another-module.js",
   },
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].[contenthash].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -44,8 +44,16 @@ module.exports = {
     ],
   },
   optimization: {
+    moduleIds: "deterministic",
+    runtimeChunk: "single",
     splitChunks: {
-      chunks: "all",
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
     },
   },
 };
