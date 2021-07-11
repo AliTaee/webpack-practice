@@ -4,8 +4,8 @@ const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
-module.exports = {
-  mode: "development",
+module.exports = (options) => ({
+  mode: options.mode,
   entry: {
     index: "./src/index.js",
     another: "./src/another-module.js",
@@ -56,4 +56,4 @@ module.exports = {
       },
     },
   },
-};
+});
