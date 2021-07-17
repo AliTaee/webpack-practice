@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production --progress --color",
+    "build": "webpack --config webpack.prod.js --progress --color",
     "watch": "webpack --watch",
-    "start": "webpack serve --open --mode development",
+    "start": "webpack serve --open --config webpack.dev.js",
     "analyzer": "webpack --profile --json > stats.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,7 +26,8 @@
     "webpack": "^5.41.1",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "lodash": "^4.17.21"

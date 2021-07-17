@@ -4,20 +4,10 @@ const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
-module.exports = (options) => ({
-  mode: options.mode,
+module.exports = {
   entry: {
     index: "./src/index.js",
     another: "./src/another-module.js",
-  },
-  output: {
-    filename: "[name].[contenthash].bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-  },
-  devtool: "inline-source-map",
-  devServer: {
-    contentBase: "./dist",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -27,6 +17,11 @@ module.exports = (options) => ({
     new FaviconsWebpackPlugin("./src/webpack-icon.png"),
     new BundleAnalyzerPlugin(),
   ],
+  output: {
+    filename: "[name].[contenthash].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
   module: {
     rules: [
       {
@@ -59,4 +54,4 @@ module.exports = (options) => ({
       },
     },
   },
-});
+};
